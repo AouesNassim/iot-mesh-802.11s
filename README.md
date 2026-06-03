@@ -18,19 +18,19 @@
 
 </div>
 
-##  Table of Contents
+## Table of Contents
 
-- [Overview](#-overview)
-- [The Challenge](#-the-challenge)
-- [Architecture](#-architecture)
-- [Protocol Choice: 802.11s vs B.A.T.M.A.N.](#-protocol-choice)
-- [Methodology: Bare Metal Firmware Engineering](#-methodology)
-- [Node 2 Setup Guide](#-node-2-setup-guide)
-- [Feasibility: OpenWrt on PC (MPP)](#-feasibility-openwrt-on-pc)
-- [Results & Validation](#-results--validation)
-- [Screenshots & Diagrams](#-screenshots--diagrams)
-- [Repository Structure](#-repository-structure)
-- [References](#-references)
+- [Overview](#overview)
+- [Requirements](#requirements)
+- [The Challenge](#the-challenge)
+- [Architecture](#architecture)
+- [Protocol Choice](#protocol-choice)
+- [Methodology](#methodology)
+- [Node 2 Setup Guide](#node-2-setup-guide)
+- [Feasibility: OpenWrt on PC](#feasibility-openwrt-on-pc)
+- [Results & Validation](#results--validation)
+- [Scripts Reference](#scripts-reference)
+- [References](#references)
 
 ---
 
@@ -340,22 +340,6 @@ uci commit && /etc/init.d/network restart
 
 
 
-
-### Suggested `node2-setup.sh`
-
-```bash
-#!/bin/sh
-# Run this on Node 2 after flashing firmware-mesh.bin
-
-uci set wireless.radio0.disabled='0'
-uci set wireless.default_radio0.mode='mesh'
-uci set wireless.default_radio0.mesh_id='Yanis_Mesh'
-uci set wireless.default_radio0.network='lan'
-uci set wireless.default_radio0.mesh_fwding='1'
-uci set network.lan.ipaddr='192.168.1.2'
-uci commit
-/etc/init.d/network restart
-```
 ---
  
 ##  Scripts Reference
